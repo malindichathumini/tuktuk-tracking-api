@@ -1,9 +1,9 @@
 # TukTuk Tracking API
 
-**Student ID:** COBSCCOMP242P-058
-**NIBM Batch:** 24.2P
-**Course:** - Web API Development
-**Lecturer:** Niranga Dharmaratna
+- Student ID: COBSCCOMP242P-058
+- NIBM Batch: 24.2P
+- Course: Web API Development
+- Lecturer: Niranga Dharmaratna
 
 ---
 
