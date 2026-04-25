@@ -1,10 +1,5 @@
 import express from 'express';
-import {
-  getUsers,
-  getUser,
-  updateUser,
-  deleteUser
-} from '../controllers/userController.js';
+import { getAllUsers, getUserById, updateUser, deleteUser } from '../controllers/userController.js';
 import { protect, authorize } from '../middleware/auth.js';
 
 const router = express.Router();
@@ -21,7 +16,7 @@ const router = express.Router();
  *       200:
  *         description: List of users
  */
-router.get('/', protect, authorize('hq_admin'), getUsers);
+router.get('/', protect, authorize('hq_admin'), getAllUsers);
 
 /**
  * @swagger
@@ -69,7 +64,7 @@ router.get('/', protect, authorize('hq_admin'), getUsers);
  *       200:
  *         description: User deleted
  */
-router.get('/:id', protect, authorize('hq_admin'), getUser);
+router.get('/:id', protect, authorize('hq_admin'), getUserById);
 router.put('/:id', protect, authorize('hq_admin'), updateUser);
 router.delete('/:id', protect, authorize('hq_admin'), deleteUser);
 
