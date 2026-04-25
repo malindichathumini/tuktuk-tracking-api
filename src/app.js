@@ -12,6 +12,7 @@ import districtRoutes from './routes/districtRoutes.js';
 import policeStationRoutes from './routes/policeStationRoutes.js';
 import tukTukRoutes from './routes/tukTukRoutes.js';
 import locationRoutes from './routes/locationRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 
 dotenv.config();
 connectDB();
@@ -62,6 +63,7 @@ app.use('/api/districts', districtRoutes);
 app.use('/api/stations', policeStationRoutes);
 app.use('/api/tuktuk', tukTukRoutes);
 app.use('/api/location', locationRoutes);
+app.use('/api/users', userRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
