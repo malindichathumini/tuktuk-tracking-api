@@ -3,6 +3,8 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
+import swaggerJsdoc from 'swagger-jsdoc';
+import swaggerUi from 'swagger-ui-express';
 import connectDB from './config/db.js';
 import authRoutes from './routes/authRoutes.js';
 import provinceRoutes from './routes/provinceRoutes.js';
@@ -21,10 +23,36 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 
+const swaggerOptions = {
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'TukTuk Tracking API',
+      version: '1.0.0',
+      description: 'Real-Time Three-Wheeler Tracking API for Sri Lanka Police',
+    },
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT',
+        },
+      },
+    },
+    security: [{ bearerAuth: [] }],
+  },
+  apis: ['./src/routes/*.js'],
+};
+
+const swaggerSpec = swaggerJsdoc(swaggerOptions);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
 app.get('/', (req, res) => {
   res.json({ 
     message: 'TukTuk Tracking API is running',
-    version: '1.0.0'
+    version: '1.0.0',
+    docs: '/api-docs'
   });
 });
 
