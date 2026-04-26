@@ -1,3 +1,7 @@
+// Auth Controller - handles user registration, login and authentication
+// Uses JWT tokens for secure authentication
+// Passwords are hashed using bcrypt before storing
+
 import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
 
