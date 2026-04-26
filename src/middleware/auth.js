@@ -1,3 +1,8 @@
+// Auth Middleware - protects routes and enforces role-based access
+// Verifies JWT token on every protected request
+// Returns 401 if token missing, 403 if role not authorized
+
+
 import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
 
