@@ -1,3 +1,7 @@
+// Province Controller - manages all 9 Sri Lanka provinces
+// Provides CRUD operations for province management
+// Only hq_admin role can create, update or delete provinces
+
 import Province from '../models/Province.js';
 
 export const createProvince = async (req, res) => {
