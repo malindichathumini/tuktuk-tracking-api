@@ -1,3 +1,7 @@
+// District Model - stores Sri Lanka administrative district data
+// Each district is linked to a parent province
+// Referenced by PoliceStation and TukTuk models
+
 import mongoose from 'mongoose';
 
 const districtSchema = new mongoose.Schema({
