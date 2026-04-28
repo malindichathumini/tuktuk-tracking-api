@@ -1,3 +1,7 @@
+// District Controller - manages all 25 Sri Lanka districts
+// Districts are linked to provinces via province ObjectId
+// Supports filtering by province ID for operational use
+
 import District from '../models/District.js';
 
 export const createDistrict = async (req, res) => {
