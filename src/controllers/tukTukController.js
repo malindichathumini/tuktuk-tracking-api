@@ -1,3 +1,7 @@
+// TukTuk Controller - manages registered three-wheeler vehicles
+// Supports filtering by district, province and status
+// Only hq_admin can register or delete tuk-tuk records
+
 import TukTuk from '../models/TukTuk.js';
 
 export const createTukTuk = async (req, res) => {
