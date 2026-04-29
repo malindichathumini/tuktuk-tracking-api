@@ -1,3 +1,7 @@
+// TukTuk Model - stores registered three-wheeler vehicle data
+// Includes driver info, device ID and operational status
+// Linked to district and province for location filtering
+
 import mongoose from 'mongoose';
 
 const tukTukSchema = new mongoose.Schema({
