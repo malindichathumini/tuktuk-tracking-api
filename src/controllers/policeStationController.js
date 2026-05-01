@@ -1,3 +1,7 @@
+// Police Station Controller - manages police station registry
+// Stations are mapped to districts and provinces
+// Supports filtering by district and province for operational use
+
 import PoliceStation from '../models/PoliceStation.js';
 
 export const createPoliceStation = async (req, res) => {
