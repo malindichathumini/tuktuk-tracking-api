@@ -1,3 +1,7 @@
+// PoliceStation Model - stores police station registry data
+// Each station is mapped to a district and province
+// Used for operational filtering of tuk-tuk location data
+
 import mongoose from 'mongoose';
 
 const policeStationSchema = new mongoose.Schema({
