@@ -1,3 +1,7 @@
+// LocationPing Model - stores GPS location data for each tuk-tuk
+// Records latitude, longitude, speed and timestamp
+// Supports time-window queries for movement history analysis
+
 import mongoose from 'mongoose';
 
 const locationPingSchema = new mongoose.Schema({
