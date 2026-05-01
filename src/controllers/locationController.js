@@ -1,3 +1,7 @@
+// Location Controller - handles GPS location pings and tracking
+// Provides live view, last known location and history endpoints
+// Supports time-window filtering for investigative use
+
 import LocationPing from '../models/LocationPing.js';
 import TukTuk from '../models/TukTuk.js';
 
