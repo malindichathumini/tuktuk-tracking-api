@@ -38,4 +38,3 @@ Real-Time Three-Wheeler (Tuk-Tuk) Tracking & Movement Logging System for Sri Lan
 - GET /api/location/live
 - GET /api/location/last/:tukTukId
 - GET /api/location/history/:tukTukId
-
