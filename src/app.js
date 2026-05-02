@@ -1,3 +1,9 @@
+// Main Application Entry Point - TukTuk Tracking API
+// Configures Express server, middleware and all API routes
+// Swagger documentation available at /api-docs endpoint
+// Deployed on Railway with CI/CD from GitHub
+
+
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
