@@ -20,7 +20,6 @@ import locationRoutes from './routes/locationRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 
 dotenv.config();
-connectDB();
 
 const app = express();
 
@@ -77,4 +76,17 @@ app.use('/api/location', locationRoutes);
 app.use('/api/users', userRoutes);
 
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, '0.0.0.0', () => console.log(`Server running on port ${PORT}`));
+
+const startServer = async () => {
+  try {
+    await connectDB();
+    app.listen(PORT, '0.0.0.0', () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  } catch (error) {
+    console.error('Failed to start server:', error);
+    process.exit(1);
+  }
+};
+
+startServer();
