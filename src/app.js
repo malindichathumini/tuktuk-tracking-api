@@ -3,7 +3,6 @@
 // Swagger documentation available at /api-docs endpoint
 // Deployed on Railway with CI/CD from GitHub
 
-
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
@@ -25,7 +24,7 @@ connectDB();
 
 const app = express();
 
-app.use(helmet());
+app.use(helmet({ contentSecurityPolicy: false, crossOriginEmbedderPolicy: false }));
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
@@ -38,6 +37,12 @@ const swaggerOptions = {
       version: '1.0.0',
       description: 'Real-Time Three-Wheeler Tracking API for Sri Lanka Police',
     },
+    servers: [
+      {
+        url: 'https://tuktuk-tracking-api-production-2a20.up.railway.app',
+        description: 'Production server'
+      }
+    ],
     components: {
       securitySchemes: {
         bearerAuth: {
@@ -71,5 +76,5 @@ app.use('/api/tuktuk', tukTukRoutes);
 app.use('/api/location', locationRoutes);
 app.use('/api/users', userRoutes);
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, '0.0.0.0', () => console.log(`Server running on port ${PORT}`));
